@@ -1,0 +1,30 @@
+*{
+  overflow-x:hidden;
+  margin: 0;
+  padding: 0;
+}
+body{
+    background: #333;
+}
+.yaseen{
+  border-radius: 5px;
+  height: 70px;
+  background: white;
+  
+  text-align: center; 
+    box-shadow: 5px 8px 8px goldenrod;
+  margin: 30px;
+  
+}
+.yaseen a{
+  
+  background: white;
+
+ padding:0  95px;
+ 
+  color:black;
+  font-weight: bolder;
+  font-size: 40px;
+  text-decoration: none;
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+*{
+  overflow:hidden;
+  margin: 0;
+  padding: 0;
+}
+body{
+    background: #333;
+}
+.container{
+  margin-top: 50px;
+}
+.text{
+  border-radius: 15px;
+  height: 50px;
+  background: #BFF6CB;
+  border:1px solid #01FF539E;
+  text-align: center; 
+    box-shadow: 5px 8px 8px #105928;
+  margin: 30px;
+  padding-top: 15px;
+}
+.text a{
+
+  background: #BFF6CB;
+
+ padding:30px  35px;
+ 
+  color: #105928;
+  font-weight: bolder;
+  font-size: 20px;
+  text-decoration: none;
+  width: 100%;
+}
