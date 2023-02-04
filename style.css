@@ -1,84 +1,86 @@
-body{
+body {
   background: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.logo1{
-  display: inline-block;
+
+.lail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.lail img {
+  width: 70%;
+  height: auto;
+}
+
+.alllogo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.logo {
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.logo h4 {
+  font-size: 25px;
   color: white;
-}
-.logo1 img{
-
-  height: 70px;
-  position: relative;
-  
-  border:2px solid goldenrod;
-  border-radius: 15px;
-  margin-top: 50px;
-}
-.logo2{
-  padding: 5px;
-  display: inline-block;
-}
-.logo2 img{
-  
-margin-top: 30px;
-  height: 70px;
-  position: relative;
-  
-  border:2px solid goldenrod;
-  border-radius: 15px;
-  
-}
-.logo3{
-  padding: 5px;
-  display: inline-block;
-}
-.logo3 img{
-  
-  height: 70px;
-  position: relative;
-  
-  border:2px solid goldenrod;
-  border-radius: 15px;
-  margin-top: 50px;
-}
-.logo4{
-  padding: 5px;
-  display: inline-block;
-}
-.logo4 img{
- 
-   
-  height: 70px;
-  position: relative;
-  
-  border:2px solid goldenrod;
-  border-radius: 15px;
-  margin-top: 50px;
-}
-.texts1{
-  
-  margin-left: 10px;
-  position: relative;
-  top: 0;
-}
-.texts1 span1{
-  
-  margin-right:30px;
-  
+  padding: 15px;
+  margin: 0;
+  text-transform: capitalize;
 }
 
+@media (max-width: 768px) {
+  .logo {
+    width: 50%;
+  }
 
-.texts1 span2{
+  .alllogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  margin-left: 5px;
-  margin-right:30px;
-  
+  .logo h4 {
+    font-size: 16px;
+  }
+
+  .logo img {
+    width: 170px;
+  }
 }
 
-.texts1 span4{
- 
-  font-size: 12px;
-  margin-left: 16px;
-  
-  
+@media (max-width: 480px) {
+  .logo {
+    width: 100%;
+  }
+
+  .alllogo {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .logo h4 {
+    font-size: 16px;
+  }
+
+  .logo img {
+    width: 170px;
+  }
 }
