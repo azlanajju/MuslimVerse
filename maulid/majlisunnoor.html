@@ -55,7 +55,7 @@ function pageScroll() {
   if (val === 100) {
     interval = 10;
   }
-  window.scrollBy(0, val); 
+  window.scrollBy(0, (val/2)); 
   timeoutID = setTimeout(pageScroll, interval);
 }
 
