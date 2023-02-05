@@ -7,6 +7,27 @@
       padding: 0;
       margin:0;
     }
+        .level{
+      display: flex;
+      justify-content: center;
+        position: fixed;
+     bottom: 20px;
+     right: 0;
+     left: 0;
+    
+    }
+.level input{
+  width:90vw;
+}
+#stopBtn{
+  display: none;
+  color: white;
+  background: red;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  right: 10px;
+}
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +35,36 @@
 </head>
 
 <body>
+  <button onclick="stop()" id="stopBtn" style="position: fixed; bottom: 60px;">Stop Scrolling</button>
+  <div class="level">
+    <input id="value" type="range" min="1" max="100" value="0">
+    <div id="percent" style="position: fixed; bottom: 0;">
+       0%
+      </div>
+  </div>
   <img width="100%" src="/images/majlisunnoor.jpg" alt="">
 
 </body>
+<script>
+let timeoutID;
+function pageScroll() {
+  document.getElementById('stopBtn').style.display='block';
+  var val = document.getElementById('value').value;
+  document.getElementById('percent').innerHTML = val + "%";
+  let interval = 100;
+  if (val === 100) {
+    interval = 10;
+  }
+  window.scrollBy(0, val); 
+  timeoutID = setTimeout(pageScroll, interval);
+}
+
+document.getElementById('value').addEventListener('input', pageScroll);
+
+function stop(){
+  clearTimeout(timeoutID);
+  document.getElementById('stopBtn').style.display='none';
+}
+</script>
 
 </html>
