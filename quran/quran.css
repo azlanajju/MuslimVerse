@@ -3,7 +3,10 @@
   margin: 0;
   padding: 0;
 }
-
+/* custom scroll bar */
+::-webkit-scrollbar {
+  width: 0px;
+}
 @font-face {
   font-family: surahnames;
   src: url("./sura_names.woff2");
