@@ -149,7 +149,7 @@ body {
 }
 
 .qq {
-  background: rgb(37, 170, 0);
+  background: rgb(4, 65, 47);
 }
 .surah{
   font-family: surahnames;
@@ -176,6 +176,8 @@ body {
   margin: 10px;
   font-weight: bold;
   cursor: pointer;
+  color: rgb(4, 65, 47);
+
 }
 
 .search-bar {
@@ -188,27 +190,28 @@ body {
   background-color: white;
   margin-left: 30%;
   margin-bottom: 30px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .search-bar input {
-  width: 80vw;
-  height: auto;
+  width: 35vw;
   padding: 5px;
   margin: 0;
-  height: 30px;
   border: none;
   font-size: 15px;
   outline: none;
 }
 
-.search,
-.mic {
-  padding: 10px;
-  color: rgb(41, 194, 194);
+.search {
+  color: rgb(4, 65, 47);
 }
 
 .yaseen:hover {
-  background: rgb(37, 170, 0);
+  background: rgb(4, 65, 47);
   color: white;
 }
 
@@ -242,7 +245,6 @@ body {
   height: 40px;
 }
 
-.search-bar {
 
 }
 
