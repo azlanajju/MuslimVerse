@@ -44,8 +44,8 @@ const prayerTimes = [
 
 
 window.addEventListener('scroll', function() {
-    if (window.scrollY > 100) {
-      document.querySelector('#about').style.opacity = 0.2;
+    if (window.scrollY > 70) {
+      document.querySelector('#about').style.opacity = 0.01;
     }
    // else if(window.scrollY > 100) {
    //   document.querySelector('#about').style.opacity = 0.1;
