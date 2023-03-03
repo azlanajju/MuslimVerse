@@ -140,3 +140,29 @@ background-color: rgba(175, 168, 168, 0.363);
   transition: 0.5s;
   /* background: rgb(2, 185, 109); */
 }
+
+
+
+@media (max-width: 768px) {
+  
+.grid-container {
+  
+  grid-template-columns: auto auto ;
+}
+
+.grid-item {
+  height: 90px;
+  width: 90px;
+  
+}
+
+.grid-item a img{
+  height: 50px;
+  width: 50px;
+}
+  
+.grid-item a h1{
+  font-size: 20px;
+  margin-top: -10px;
+}
+}
