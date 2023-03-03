@@ -1,6 +1,6 @@
 const surahs = [
-    { name: '1. الفَاتِحَة', link: './surahs/01fathiha.html', aya: 7 },
-    { name: '2. البَقَرَة', link: './surahs/02baqarah.html', aya: 286 },
+    { name: '1. الفَاتِحَة', link: './surahs/01fathiha.html', aya: 7 ,tags: ['fathiha', 'fatiha'] },
+    { name: '2. البَقَرَة', link: './surahs/02baqarah.html', aya: 286,tags: ['baqara', 'bakara'] },
     { name: '3. آل عِمرَان', link: '/quran/al-mulk.html', aya: 200 },
     { name: '4. النِّسَاء', link: '/quran/al-mulk.html', aya: 176 },
     { name: '5. المَائدة', link: '/quran/al-mulk.html', aya: 120 },
@@ -115,21 +115,37 @@ const surahs = [
     { name: '114. النَّاس', link: '/quran/al-mulk.html', aya: 6 },
 ];
 
-window.onload = function () {
-    let container = document.createElement('div');
-    container.className = 'container';
-    container.style.width = '80%';
-    container.style.margin = '0 auto';
+function filterSurahs(searchText) {
+    return surahs.filter(surah => {
+      const lowerCaseSearchText = searchText.toLowerCase();
+      const lowerCaseSurahName = surah.name.toLowerCase();
+      const tags = surah.tags || [];
 
+      // Check if the search text is a partial match for the surah name or any of its tags
+      return lowerCaseSurahName.includes(lowerCaseSearchText) || tags.some(tag => tag.includes(lowerCaseSearchText));
+    });
+  }
+
+  function renderSurahs(surahs) {
+    const container = document.getElementById('container');
+    container.innerHTML = '';
     for (const surah of surahs) {
-        let yaseen = document.createElement('div');
-        yaseen.className = 'yaseen';
-        yaseen.innerHTML = surah.name + "<br>" + surah.aya + " Ayahs";
-        yaseen.onclick = function () {
-            window.location = surah.link;
-        };
-        container.appendChild(yaseen);
+      const yaseen = document.createElement('div');
+      yaseen.className = 'yaseen';
+      yaseen.innerHTML = surah.name + "<br>" + surah.aya + " Ayahs";
+      yaseen.onclick = function () {
+        window.location = surah.link;
+      };
+      container.appendChild(yaseen);
     }
+  }
 
-    document.body.appendChild(container);
-};
+  const searchInput = document.getElementById('search-input');
+  searchInput.addEventListener('input', function (event) {
+    const searchText = event.target.value.trim();
+    const filteredSurahs = filterSurahs(searchText);
+   
+renderSurahs(filteredSurahs);
+});
+
+renderSurahs(surahs);
