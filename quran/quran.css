@@ -240,9 +240,13 @@ body {
   }
   
 .search-bar {
-  margin-left: 0;
+
+  
   width:77vw;
   height: 40px;
+margin-left:auto;
+margin-right:auto;
+
 }
 
 .search-bar input {
