@@ -41,3 +41,16 @@ const prayerTimes = [
   document.querySelector('.wakth').textContent = upcomingPrayer;
   document.querySelector('.date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
   document.querySelector('.ardate').textContent = arDate;
+
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+      document.querySelector('#about').style.opacity = 0.3;
+    }
+   // else if(window.scrollY > 20) {
+   //   document.querySelector('#about').style.opacity = 0.1;
+    //}
+    else {
+      document.querySelector('#about').style.opacity = 1;
+    }
+  });
