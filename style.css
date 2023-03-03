@@ -165,4 +165,8 @@ background-color: rgba(175, 168, 168, 0.363);
   font-size: 20px;
   margin-top: -10px;
 }
+
+.time{
+  font-size: 60px;
+}
 }
