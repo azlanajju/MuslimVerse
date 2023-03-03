@@ -245,6 +245,8 @@ body {
   height: 40px;
 }
 
-
+.search-bar input {
+width:87px;
+}
 }
 
