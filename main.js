@@ -47,7 +47,7 @@ window.addEventListener('scroll', function() {
     if (window.scrollY > 30) {
       document.querySelector('#about').style.opacity = 0.3;
     }
-   // else if(window.scrollY > 20) {
+   // else if(window.scrollY > 100) {
    //   document.querySelector('#about').style.opacity = 0.1;
     //}
     else {
