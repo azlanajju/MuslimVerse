@@ -1,6 +1,6 @@
 const surahs = [
-    { name: '1. الفَاتِحَة', link: './01fathiha.html', aya: 7 },
-    { name: '2. البَقَرَة', link: './02baqarah.html', aya: 286 },
+    { name: '1. الفَاتِحَة', link: './surahs/01fathiha.html', aya: 7 },
+    { name: '2. البَقَرَة', link: './surahs/02baqarah.html', aya: 286 },
     { name: '3. آل عِمرَان', link: '/quran/al-mulk.html', aya: 200 },
     { name: '4. النِّسَاء', link: '/quran/al-mulk.html', aya: 176 },
     { name: '5. المَائدة', link: '/quran/al-mulk.html', aya: 120 },

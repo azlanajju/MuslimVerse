@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prayer Time</title>
+  </head>
+  <body>
+    <div class="about" id="about">
+      <div class="time">
+        <span class="upcoming-time"></span>
+        <small class="upcoming-am-pm"></small>
+        <div class="wakth"></div>
+      </div>
+      <div class="date"></div>
+      <div class="ardate"></div>
+    </div>
+
+    <script>
+      // get current date and time
+      const now = new Date();
+
+      // get user's location
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+
+        // get prayer times
+        fetch(`https://api.aladhan.com/v1/timings?latitude=51.5074&longitude=0.1278&method=2`)
+          .then(response => response.json())
+          .then(data => {
+            const prayerTimes = data.data.timings;
+
+            // get current prayer time
+            let currentPrayer = '';
+            for (let i = 0; i < prayerTimes.length; i++) {
+              const prayerTime = new Date(`${now.toLocaleDateString('en-US')} ${prayerTimes[Object.keys(prayerTimes)[i]]}`);
+              if (now < prayerTime) {
+                currentPrayer = Object.keys(prayerTimes)[i] === 'Fajr' ? 'Isha' : Object.keys(prayerTimes)[i - 1];
+                break;
+              }
+            }
+
+            // get upcoming prayer time
+            let upcomingPrayer = '';
+            let upcomingTime = '';
+            for (let i = 0; i < prayerTimes.length; i++) {
+              const prayerTime = new Date(`${now.toLocaleDateString('en-US')} ${prayerTimes[Object.keys(prayerTimes)[i]]}`);
+              if (now < prayerTime) {
+                upcomingPrayer = Object.keys(prayerTimes)[i];
+                upcomingTime = prayerTimes[upcomingPrayer];
+                break;
+              }
+            }
+
+            // get Arabic date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', calendar: 'islamic-umalqura' };
+            const arDate = now.toLocaleDateString('ar-SA', options);
+
+            // update the HTML elements with the prayer times
+            document.querySelector('.upcoming-time').textContent = upcomingTime.split(' ')[0];
+            document.querySelector('.upcoming-am-pm').textContent = upcomingTime.split(' ')[1];
+            document.querySelector('.wakth').textContent = upcomingPrayer;
+            document.querySelector('.date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+            document.querySelector('.ardate').textContent = arDate;
+          })
+          .catch(error => console.log(error));
+      }, error => console.log(error), { timeout: 1000 });
+    </script>
+  </body>
+</html>

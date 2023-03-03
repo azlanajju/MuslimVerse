@@ -7,21 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>Sunni</title>
 </head>
 
 <body>
 
-    <div class="about">
+
+
+    <div class="about" id="about">
         <div class="time">
-            4:45 <small>pm</small>
-         <div class="wakth">ASR</div>
+          <span class="upcoming-time"></span>
+          <small class="upcoming-am-pm"></small>
+          <div class="wakth"></div>
         </div>
-        <div class="date">Tuesday, 21 May</div>
-         <div class="ardate">
-            16 ramadan 1445
-         </div>
-    </div>
+        <div class="date"></div>
+        <div class="ardate"></div>
+      </div>
     <div class="contents">
         <div class="grid-container">
             <div class="grid-item"><a href="/quran/quranmenu.html"><img src="icons/qurann.png" alt=""><br><br>
@@ -47,65 +48,65 @@
                     <h1>Ratheeb</h1> <br>
                     
                 </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
+            <div class="grid-item"><a href=""><img  src="icons/malappat.png" alt=""><br><br>
                     <h1>Malappat</h1> <br>
                     
                 </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
+            <div class="grid-item"><a href=""><img  src="icons/majlisunnor.png" alt=""><br><br>
                     <h1>Majlisunoor</h1> <br>
                     
                 </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
+            <div class="grid-item"><a href=""><img  src="icons/zikr.png" alt=""><br><br>
                     <h1>Dikr</h1> <br>
                     
                 </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
+            <div class="grid-item"><a href=""><img  src="icons/other.png" alt=""><br><br>
                     <h1>Other</h1> <br>
                     
                 </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
+            <div class="grid-item"><a href=""><img  src="icons/counter.png" alt=""><br><br>
                     <h1>Counter</h1> <br>
                     
                 </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
+
+
+            <!-- <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
                     <h1>azlan</h1> <br>
                     
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
-            <div class="grid-item"><a href=""><img  src="example.jpg" alt=""><br><br>
-                    <h1>azlan</h1> <br>
-                    
-                </a></div>
+                </a></div> -->
+   
         </div>
     </div>
+<script src="main.js"></script>
+<script>
+       // Replace the `prayerTimes` array with your own prayer times
+       const prayerTimes = [
+      { name: 'Fajr', time: '2023-03-03T05:00:00.000Z' },
+      { name: 'Dhuhr', time: '2023-03-03T12:00:00.000Z' },
+      { name: 'Asr', time: '2023-03-03T15:00:00.000Z' },
+      { name: 'Maghrib', time: '2023-03-03T18:00:00.000Z' },
+      { name: 'Isha', time: '2023-03-03T20:00:00.000Z' },
+    ];
 
+    // get current date and time
+    const now = new Date();
+
+    // get upcoming prayer time
+    let upcomingPrayer = '';
+    for (let i = 0; i < prayerTimes.length; i++) {
+      const prayerTime = new Date(prayerTimes[i].time);
+      if (now < prayerTime) {
+        upcomingPrayer = prayerTimes[i].name;
+        break;
+      }
+    }
+
+    // update the HTML elements with the prayer times
+    document.querySelector('.wakth').textContent = upcomingPrayer;
+    document.querySelector('.date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    document.querySelector('.ardate').textContent = upcomingPrayer;
+  
+</script>
 </body>
 
 </html>
