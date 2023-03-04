@@ -1,9 +1,9 @@
 const prayerTimes = [
-    { name: 'Fajr', time: '05:30 AM' },
-    { name: 'Dhuhr', time: '12:45 PM' },
-    { name: 'Asr', time: '03:15 PM' },
-    { name: 'Maghrib', time: '06:00 PM' },
-    { name: 'Isha', time: '07:30 PM' }
+    { name: 'Fajr', time: '05:29 AM' },
+    { name: 'Dhuhr', time: '12:46 PM' },
+    { name: 'Asr', time: '04:07 PM' },
+    { name: 'Maghrib', time: '06:44 PM' },
+    { name: 'Isha', time: '07:54 PM' }
   ];
 
   // get current date and time
