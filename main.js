@@ -12,7 +12,7 @@ const prayerTimes = [
   // get current prayer time
   let currentPrayer = '';
   for (let i = 0; i < prayerTimes.length; i++) {
-    const prayerTime = new Date(`2023-03-04 ${prayerTimes[i].time}`);
+    const prayerTime = new Date(`2023-03-05 ${prayerTimes[i].time}`);
     if (now < prayerTime) {
       currentPrayer = i === 0 ? 'Fajr' : prayerTimes[i - 1].name;
       break;
