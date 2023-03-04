@@ -149,3 +149,14 @@ renderSurahs(filteredSurahs);
 });
 
 renderSurahs(surahs);
+
+
+// search animation 
+  const searchBar = document.getElementById("search-input");
+  const placeholders = ["Search eg: Kahf", "Search eg: Dukhan", "Search eg:Fathiha", "Search eg:Baqara", "Search eg:Anfal"];
+  let i = 0;
+
+  setInterval(() => {
+    searchBar.setAttribute("placeholder", placeholders[i]);
+    i = (i + 1) % placeholders.length;
+  }, 2000);
