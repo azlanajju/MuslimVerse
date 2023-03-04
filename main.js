@@ -23,7 +23,7 @@ const prayerTimes = [
   let upcomingPrayer = '';
   let upcomingTime = '';
   for (let i = 0; i < prayerTimes.length; i++) {
-    const prayerTime = new Date(`2023-03-03 ${prayerTimes[i].time}`);
+    const prayerTime = new Date(`2023-03-05 ${prayerTimes[i].time}`);
     if (now < prayerTime) {
       upcomingPrayer = prayerTimes[i].name;
       upcomingTime = prayerTimes[i].time;
