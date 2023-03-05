@@ -27,8 +27,6 @@ Contact form for users to submit inquiries or feedback
 This website was created by [Azlan](https://github.com/azlanajju/)  and [Rifazali](https://github.com/rifaz124/) followed by other contributers using the above technologies. If you have any questions or feedback, please contact [muhammedazlan11@gmail.com].
 
 
-# <font size="6">**Live site:**
-</font>
-<iframe src="https://sunni.netlify.app" title="Sunni Website" width="100%" height="500px"></iframe>
+
 
 
