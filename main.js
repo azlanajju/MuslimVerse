@@ -54,3 +54,22 @@ window.addEventListener('scroll', function() {
       document.querySelector('#about').style.opacity = 1;
     }
   });
+
+// loader
+// window.addEventListener('load', function() {
+//   const loader = document.querySelector('.loader');
+//   loader.classList.add('hidden');
+// });
+window.addEventListener('load', function() {
+  const loader = document.querySelector('.loader');
+  const body = document.querySelector('body');
+  loader.classList.add('hidden');
+  body.classList.remove('blurred');
+});
+
+window.addEventListener('beforeunload', function() {
+  const loader = document.querySelector('.loader');
+  const body = document.querySelector('body');
+  loader.classList.remove('hidden');
+  body.classList.add('blurred');
+});

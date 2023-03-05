@@ -160,3 +160,6 @@ renderSurahs(surahs);
     searchBar.setAttribute("placeholder", placeholders[i]);
     i = (i + 1) % placeholders.length;
   }, 2000);
+
+
+
