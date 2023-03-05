@@ -29,4 +29,5 @@ This website was created by [Azlan](https://github.com/azlanajju/)  and [Rifazal
 
 
 
+![Alt Text](/demo.gif)
 
