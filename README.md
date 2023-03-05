@@ -24,7 +24,7 @@ Contact form for users to submit inquiries or feedback
 
 
 **Credits**  
-This website was created by Azlan and [Rifazali](https://gitub.com/rifaz124/)  using the above technologies. If you have any questions or feedback, please contact [muhammedazlan11@gmail.com].
+This website was created by [Azlan](https://github.com/azlanajju/)  and [Rifazali](https://github.com/rifaz124/) followed by other contributers using the above technologies. If you have any questions or feedback, please contact [muhammedazlan11@gmail.com].
 
 
 
