@@ -5,8 +5,8 @@
 
  The website is designed to be responsive, allowing users to easily navigate and access information on both desktop and mobile devices.
 
-**Technologies Used**
-This website was built using the following technologies:
+**Technologies Used**  
+This website was built using the following technologies:  
 HTML5
 CSS3
 JavaScript
