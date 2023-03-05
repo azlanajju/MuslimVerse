@@ -1,4 +1,4 @@
-## [Goto Web-site](https://sunni.netlify.app/)
+## [Goto Website](https://sunni.netlify.app/)
 
 # <font size="6">**Sunni Website**
 </font>
