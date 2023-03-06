@@ -9,7 +9,7 @@ const surahs = [
     { name: '8. الأنفَال', link: '/quran/al-mulk.html', aya: 75 ,tags: ['alanfaal', 'alanfal','anfaal','anfal']},
     { name: '9. التوبَة', link: '/quran/al-mulk.html', aya: 129 ,tags: ['attawba', 'altaubah','taubah','tawba']},
     { name: '10. يُونس', link: '/quran/al-mulk.html', aya: 109 ,tags: ['yunus']},
-    { name: '11. هُود', link: '/quran/al-mulk.html', aya: 123 ,tags: ['hud','hudh']},
+    { name: '11. هُود', link: '/quran/al-mulk.html', aya: 123 ,tags: ['hud','hudh','hood']},
     { name: '12. يُوسُف', link: '/quran/al-mulk.html', aya: 111 ,tags: ['yusuf']},
     { name: '13. الرَّعْد', link: '/quran/al-mulk.html', aya: 43 ,tags: ['arrad','arraad','raad','raadh']},
     { name: '14. إبراهِيم', link: '/quran/al-mulk.html', aya: 52 ,tags: ['ibrahim']},
