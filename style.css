@@ -51,7 +51,7 @@ background-color: rgba(175, 168, 168, 0.363);
   padding: 10px;
 }
 .date{
-  font-size: 25px;
+  font-size: 40px;
   margin-top: 20px;
 
     /* golden colour font  */
@@ -81,6 +81,7 @@ background-color: rgba(175, 168, 168, 0.363);
       #cb9b51 78%,
       #d3b107 100%
       );
+	font-size: 40px;
        color:transparent;
        -webkit-background-clip:text;
     
@@ -170,7 +171,12 @@ margin-top: 270px;
   font-size: 20px;
   margin-top: -10px;
 }
-
+.date{
+  font-size:25px;
+}
+.ardate{
+  font-size:25px;
+}
 .time{
   font-size: 60px;
 }
