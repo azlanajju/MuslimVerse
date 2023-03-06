@@ -12,7 +12,7 @@ const prayerTimes = [
   // get current prayer time
   let currentPrayer = '';
   for (let i = 0; i < prayerTimes.length; i++) {
-    const prayerTime = new Date(`2023-03-06 ${prayerTimes[i].time}`);
+    const prayerTime = new Date(`2023-03-07 ${prayerTimes[i].time}`);
     if (now < prayerTime) {
       currentPrayer = i === 0 ? 'Fajr' : prayerTimes[i - 1].name;
       break;
@@ -23,7 +23,7 @@ const prayerTimes = [
   let upcomingPrayer = '';
   let upcomingTime = '';
   for (let i = 0; i < prayerTimes.length; i++) {
-    const prayerTime = new Date(`2023-03-06 ${prayerTimes[i].time}`);
+    const prayerTime = new Date(`2023-03-07 ${prayerTimes[i].time}`);
     if (now < prayerTime) {
       upcomingPrayer = prayerTimes[i].name;
       upcomingTime = prayerTimes[i].time;
