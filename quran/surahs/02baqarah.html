@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surah al baqara</title>
+    <title>Surah Al-Baqara</title>
     <link rel="stylesheet" href="./surah.css">
 </head>
 <body>
     <div class="surah_heading">
         <h1>Surah Al-Baqara</h1>
-
     </div>
     <div id="surah-container"></div>
 
@@ -29,8 +28,12 @@
             '9': '٩'
         };
 
-        // Fetch Surah Al-Baqarah from the API
-        fetch('http://api.alquran.cloud/v1/surah/2')
+        // Fetch Surah Al-Baqarah from the API using a proxy server
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const apiUrl = 'http://api.alquran.cloud/v1/surah/2';
+        const apiUrlWithProxy = proxyUrl + apiUrl;
+
+        fetch(apiUrlWithProxy)
             .then(response => response.json())
             .then(data => {
                 // Get the text of Surah Al-Baqarah
@@ -43,8 +46,6 @@
                 surahAlBaqarah.forEach((verse, index) => {
                     const verseElement = document.createElement('span');
                     verseElement.textContent = verse.text;
-
-  
 
                     // Create a span element for the ayah number
                     const ayahNumber = document.createElement('span');

@@ -34,7 +34,7 @@ const surahs = [
     { name: '33. الأحزَاب', link: './surahs/33ahzaab.html', aya: 73 ,tags: ['alahzaab', 'ahzaab','ahzab']},
     { name: '34. سَبَأ', link: './surahs/34saba.html', aya: 54 ,tags: ['saba']},
     { name: '35. فَاطِر', link: './surahs/35faatir.html', aya: 45 ,tags: ['faatir', 'fatir']},
-    { name: '36. يس', link: '/surahs/36yaseen.html', aya: 83 ,tags: ['yaseen', 'yasin']},
+    { name: '36. يس', link: './surahs/36yaseen.html', aya: 83 ,tags: ['yaseen', 'yasin']},
     { name: '37. الصَّافات', link: './surahs/37saaffat.html', aya: 182 ,tags: ['assaaffaat', 'saaffaat','saffat']},
     { name: '38. ص', link: './surahs/38saad.html', aya: 88 ,tags: ['saad']},
     { name: '39. الزُّمَر', link: './surahs/39zumar.html', aya: 75 ,tags: ['azzumar', 'zumar']},
