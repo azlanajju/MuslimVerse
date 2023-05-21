@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surah Al-Baqara</title>
+    <title>Surah al-Baqarah</title>
     <link rel="stylesheet" href="./surah.css">
 </head>
 <body>
     <div class="surah_heading">
-        <h1>Surah Al-Baqara</h1>
+        <h1>Surah Al-Baqarah</h1>
     </div>
     <div id="surah-container"></div>
 
@@ -28,38 +28,37 @@
             '9': '٩'
         };
 
-        // Fetch Surah Al-Baqarah from the API using a proxy server
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        const apiUrl = 'http://api.alquran.cloud/v1/surah/2';
-        const apiUrlWithProxy = proxyUrl + apiUrl;
+        // Wait for the HTML content to load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Fetch Surah Al-Baqarah from the API
+            fetch('https://api.alquran.cloud/v1/surah/2')
+                .then(response => response.json())
+                .then(data => {
+                    // Get the text of Surah Al-Baqarah
+                    const surahAlBaqarah = data.data.ayahs;
 
-        fetch(apiUrlWithProxy)
-            .then(response => response.json())
-            .then(data => {
-                // Get the text of Surah Al-Baqarah
-                const surahAlBaqarah = data.data.ayahs;
+                    // Create a container element for the surah text
+                    const surahContainer = document.getElementById('surah-container');
 
-                // Create a container element for the surah text
-                const surahContainer = document.getElementById('surah-container');
+                    // Create a span element for each verse
+                    surahAlBaqarah.forEach((verse, index) => {
+                        const verseElement = document.createElement('span');
+                        verseElement.textContent = verse.text;
 
-                // Create a span element for each verse
-                surahAlBaqarah.forEach((verse, index) => {
-                    const verseElement = document.createElement('span');
-                    verseElement.textContent = verse.text;
+                        // Create a span element for the ayah number
+                        const ayahNumber = document.createElement('span');
+                        const arabicNumber = verse.numberInSurah.toString().replace(/[0-9]/g, digit => arabicNumerals[digit]);
+                        ayahNumber.textContent = arabicNumber;
+                        ayahNumber.classList.add('ayah-number');
 
-                    // Create a span element for the ayah number
-                    const ayahNumber = document.createElement('span');
-                    const arabicNumber = verse.numberInSurah.toString().replace(/[0-9]/g, digit => arabicNumerals[digit]);
-                    ayahNumber.textContent = arabicNumber;
-                    ayahNumber.classList.add('ayah-number');
-
-                    verseElement.appendChild(ayahNumber);
-                    surahContainer.appendChild(verseElement);
+                        verseElement.appendChild(ayahNumber);
+                        surahContainer.appendChild(verseElement);
+                    });
+                })
+                .catch(error => {
+                    console.log('An error occurred:', error);
                 });
-            })
-            .catch(error => {
-                console.log('An error occurred:', error);
-            });
+        });
     </script>
 </body>
 </html>
