@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Prayer Times</h1>
+    <select id="monthSelect" onchange="fetchData()">
+        <option value="">Select Month</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+    <p id="loadingMessage" style="display:none;">Loading...</p>
+
+    <table id="prayerTable" border="1">
+        <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>Fajr</th>
+                <th>Dhuhr</th>
+                <th>Asr</th>
+                <th>Maghrib</th>
+                <th>Isha</th>
+                <th>End Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        function fetchData() {
+            const monthSelect = document.getElementById("monthSelect");
+            const selectedMonth = monthSelect.value;
+            const prayerTableBody = document.querySelector("#prayerTable tbody");
+            const loadingMessage = document.getElementById("loadingMessage");
+            prayerTableBody.innerHTML = ""; // Clear previous data
+            loadingMessage.style.display = "none"; // Hide loading message
+
+            if (selectedMonth) {
+                loadingMessage.style.display = "block"; // Show loading message
+                fetch('./json/prayerTimes.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const monthData = data[selectedMonth];
+                        loadingMessage.style.display = "none"; // Hide loading message
+                        if (monthData) {
+                            monthData.forEach(item => {
+                                const row = document.createElement("tr");
+                                row.innerHTML = `
+                                    <td>${item.startDate}</td>
+                                    <td>${item.times.Fajr}</td>
+                                    <td>${item.times.Dhuhr}</td>
+                                    <td>${item.times.Asr}</td>
+                                    <td>${item.times.Maghrib}</td>
+                                    <td>${item.times.Isha}</td>
+                                                                        <td>${item.endDate}</td>
+
+                                `;
+                                prayerTableBody.appendChild(row);
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        loadingMessage.style.display = "none"; // Hide loading message
+                        console.error('Error fetching data:', error);
+                    });
+            }
+        }
+    </script>
+</body>
+</html>

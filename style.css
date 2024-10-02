@@ -1,15 +1,13 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   overflow-x: hidden;
-background-color: rgba(175, 168, 168, 0.363);
-
-
+  background-color: rgba(175, 168, 168, 0.363);
 }
 
-.about{
+.about {
   height: 350px;
   width: 100vw;
   /* background-color: rgb(8, 221, 132); */
@@ -21,96 +19,62 @@ background-color: rgba(175, 168, 168, 0.363);
   position: fixed;
   top: 0;
   z-index: -1;
-  
 }
-.time{
+.time {
   font-size: 70px;
   display: flex;
   color: white;
 
   /* golden colour font  */
-  background-image: linear-gradient(
-	to right,
-	#f6e27a 0,
-       	#cb9b51 22%, 
-	#f6e27a 45%,
-	#f6f2c0 50%,
-	#f6e27a 55%,
-	#cb9b51 78%,
-	#d3b107 100%
-	);
-   color:transparent;
-   -webkit-background-clip:text;
+  background-image: linear-gradient(to right, #f6e27a 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #d3b107 100%);
+  color: transparent;
+  -webkit-background-clip: text;
 }
-.time small{
+.time small {
   font-size: 20px;
-  
 }
-.wakth{
+.wakth {
   font-size: 35px;
   padding: 10px;
 }
-.date{
+.date {
   font-size: 40px;
   margin-top: 20px;
 
-    /* golden colour font  */
-    background-image: linear-gradient(
-      to right,
-      #f6e27a 0,
-             #cb9b51 22%, 
-      #f6e27a 45%,
-      #f6f2c0 50%,
-      #f6e27a 55%,
-      #cb9b51 78%,
-      #d3b107 100%
-      );
-       color:transparent;
-       -webkit-background-clip:text;
-    
+  /* golden colour font  */
+  background-image: linear-gradient(to right, #f6e27a 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #d3b107 100%);
+  color: transparent;
+  -webkit-background-clip: text;
 }
-.ardate{
-    /* golden colour font  */
-    background-image: linear-gradient(
-      to right,
-      #f6e27a 0,
-             #cb9b51 22%, 
-      #f6e27a 45%,
-      #f6f2c0 50%,
-      #f6e27a 55%,
-      #cb9b51 78%,
-      #d3b107 100%
-      );
-	font-size: 40px;
-       color:transparent;
-       -webkit-background-clip:text;
-    
+.ardate {
+  /* golden colour font  */
+  background-image: linear-gradient(to right, #f6e27a 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #d3b107 100%);
+  font-size: 40px;
+  color: transparent;
+  -webkit-background-clip: text;
 }
-.contents{
+.contents {
   width: 90vw;
   background-color: transparent;
   margin-left: 5vw;
-margin-top: 270px;
-
-
+  margin-top: 270px;
 }
-.cred{
+.cred {
   display: flex;
   float: right;
   height: 65px;
   padding-right: 20px;
 }
 
-
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   height: relative;
-  padding: 1px;  margin: 10px;
+  padding: 1px;
+  margin: 10px;
   border-radius: 25px;
 }
 .grid-item {
-  
   background-color: white;
   padding: 20px;
   font-size: 30px;
@@ -118,68 +82,60 @@ margin-top: 270px;
   margin: 15px;
   border-radius: 25px;
   /* box-shadow: 3px 3px 5px 5px grey ; */
-  box-shadow: rgb(4, 65, 47) 0px 5px 15px ;
+  box-shadow: rgb(4, 65, 47) 0px 5px 15px;
   height: 170px;
   width: 170px;
-
 }
-.grid-item a{
+.grid-item a {
   text-decoration: none;
   color: rgb(4, 65, 47);
-
 }
-.grid-item a img{
+.grid-item a img {
   border-radius: 10px;
-  height:100px;
-  width:100px;
-  filter: drop-shadow(8px 8px 10px gray);;
+  height: 100px;
+  width: 100px;
+  filter: drop-shadow(8px 8px 10px gray);
 }
-.grid-item a h1{
+.grid-item a h1 {
   font-weight: 500;
   color: rgb(4, 65, 47);
   text-decoration: none;
   font-size: 30px;
 }
 
-
-.grid-item:hover{
+.grid-item:hover {
   transition: 0.5s;
   /* background: rgb(2, 185, 109); */
 }
 
-
-
 @media (max-width: 768px) {
-  
-.grid-container {
-  
-  grid-template-columns: auto auto ;
-}
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
 
-.grid-item {
-  height: 90px;
-  width: 90px;
-  
-}
+  .grid-item {
+    height: 90px;
+    width: 90px;
+  }
 
-.grid-item a img{
-  height: 50px;
-  width: 50px;
-}
-  
-.grid-item a h1{
-  font-size: 20px;
-  margin-top: -10px;
-}
-.date{
-  font-size:25px;
-}
-.ardate{
-  font-size:25px;
-}
-.time{
-  font-size: 60px;
-}
+  .grid-item a img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .grid-item a h1 {
+    font-size: 20px;
+    margin-top: -10px;
+  }
+  .date {
+    font-size: 25px;
+  }
+  .ardate {
+    font-size: 25px;
+  }
+  .time {
+    font-size: 60px;
+  }
 }
 /* loader */
 .loader {
@@ -190,34 +146,63 @@ margin-top: 270px;
   transform: translate(-50%, -50%);
 }
 
-.loader img{
-border-radius: 50%;
-width: 120px;
-height: 120px;
-animation: ani 0.8s linear infinite;
-box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
+.loader img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: ani 0.8s linear infinite;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
 }
 
 @keyframes ani {
-0% {
+  0% {
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
-}
-50% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  50% {
     width: 150px;
     height: 150px;
-    box-shadow: 0 0 40px 40px rgba(0,0,0,0.5);
-}
-100% {
+    box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.5);
+  }
+  100% {
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
-}
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  }
 }
 
 .hidden {
   display: none;
 }
 
-git 
+.azaanTTBtn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-image: linear-gradient(to right, #f6e27a 0, #cb9b51 22%, #f6e27a 45%, #f6e27a 50%, #f6e27a 55%, #cb9b51 78%, #d3b107 100%);
+  color: rgb(4, 65, 47);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 780px) {
+  .azaanTTBtn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: inline-block;
+    padding: 7px 10px;
+    background-image: linear-gradient(to right, #f6e27a 0, #cb9b51 22%, #f6e27a 45%, #f6e27a 50%, #f6e27a 55%, #cb9b51 78%, #d3b107 100%);
+    color: rgb(4, 65, 47);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 11px;
+    transition: background-color 0.3s ease;
+  }
+}
