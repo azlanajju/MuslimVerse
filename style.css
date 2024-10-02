@@ -207,3 +207,14 @@ body {
     transition: background-color 0.3s ease;
   }
 }
+
+.devNotify {
+  position: fixed;
+left: 0;
+width: 100vw;
+padding: 5px;
+font-size: 8px;
+bottom: 0;
+background: white;
+z-index: 9999;
+}
