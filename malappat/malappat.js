@@ -1,6 +1,6 @@
 const surahs = [
-  { name: 'محي الدين مالا', link: './malapats/muhyuddinmala.html', tags: ['muh', 'fatiha','fathiha']},
-  { name: '1. الفَاتِحَة', link: './surahs/01fathiha.html', aya: 7 ,tags: ['alfatiha', 'fatiha','fathiha']},
+  { name: 'محي الدين مالا', link: './malapats/muhyuddinmala.html', tags: ['muh', 'muhyuddinmala','muhiyuddin']},
+  // { name: '1. الفَاتِحَة', link: './surahs/01fathiha.html', aya: 7 ,tags: ['alfatiha', 'fatiha','fathiha']},
 ];
 
 function filterSurahs(searchText) {

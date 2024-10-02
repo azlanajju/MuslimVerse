@@ -2,6 +2,15 @@
     margin: 0;
     padding: 0;
 }
+.maulid {
+text-align: center;}
 .maulid img{
     width: 100%;
+}
+@media (min-width:780px) {
+    .maulid img{
+        width: 70%;
+    }
+
+  
 }
