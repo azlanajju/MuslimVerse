@@ -1,57 +1,149 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Majlisunnoor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .scroll-indicator {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+    
+    .scroll-indicator.paused {
+      background: rgba(220, 53, 69, 0.8);
+    }
+    
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 12px;
+      z-index: 1000;
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
-<img src="majlisunnoorimages/majlisunnoor_2.jpg" alt="" width="100%">
+  <div class="scroll-indicator" id="scrollIndicator">Auto-scrolling...</div>
+  <div class="controls">Press SPACEBAR to pause/resume scrolling</div>
 
-<img src="majlisunnoorimages/majlisunnoor_3.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_2.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_3.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_4.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_5.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_6.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_7.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_8.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_9.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_10.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_11.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_12.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_13.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_14.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_15.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_16.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_17.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_18.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_19.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_20.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_21.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_22git.jpg" alt="" width="100%">
 
-<img src="majlisunnoorimages/majlisunnoor_4.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_5.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_6.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_7.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_8.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_9.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_10.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_11.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_12.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_13.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_14.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_15.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_16.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_17.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_18.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_19.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_20.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_21.jpg" alt="" width="100%">
-
-<img src="majlisunnoorimages/majlisunnoor_22git.jpg" alt="" width="100%">
-
-
-
+  <script>
+    let isScrolling = true;
+    let scrollSpeed = 1; // pixels per frame
+    let animationId;
+    
+    const indicator = document.getElementById('scrollIndicator');
+    
+    function autoScroll() {
+      if (isScrolling) {
+        window.scrollBy(0, scrollSpeed);
+        
+        // Check if we've reached the bottom
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+          // Reset to top and continue scrolling
+          window.scrollTo(0, 0);
+        }
+      }
+      animationId = requestAnimationFrame(autoScroll);
+    }
+    
+    function toggleScroll() {
+      isScrolling = !isScrolling;
+      
+      if (isScrolling) {
+        indicator.textContent = 'Auto-scrolling...';
+        indicator.classList.remove('paused');
+      } else {
+        indicator.textContent = 'Scrolling paused';
+        indicator.classList.add('paused');
+      }
+    }
+    
+    // Start auto-scrolling when page loads
+    window.addEventListener('load', function() {
+      autoScroll();
+    });
+    
+    // Listen for spacebar presses
+    document.addEventListener('keydown', function(event) {
+      // Check if spacebar is pressed (keyCode 32 or key ' ')
+      if (event.code === 'Space' || event.key === ' ') {
+        event.preventDefault(); // Prevent default spacebar behavior (page scroll)
+        toggleScroll();
+      }
+    });
+    
+    // Hide controls after 5 seconds, show on mouse move
+    let controlsTimeout;
+    const controls = document.querySelector('.controls');
+    
+    function hideControlsAfterDelay() {
+      clearTimeout(controlsTimeout);
+      controls.style.opacity = '1';
+      controlsTimeout = setTimeout(() => {
+        controls.style.opacity = '0.3';
+      }, 5000);
+    }
+    
+    document.addEventListener('mousemove', hideControlsAfterDelay);
+    hideControlsAfterDelay(); // Initial call
+    
+    // Adjust scroll speed based on screen size
+    function adjustScrollSpeed() {
+      const screenHeight = window.innerHeight;
+      scrollSpeed = Math.max(0.5, screenHeight / 1000); // Responsive scroll speed
+    }
+    
+    window.addEventListener('resize', adjustScrollSpeed);
+    adjustScrollSpeed(); // Initial call
+  </script>
 </body>
-
 </html>
