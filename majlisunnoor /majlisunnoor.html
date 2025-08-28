@@ -59,31 +59,43 @@
     
     .speed-slider {
       width: 120px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 2px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 3px;
       outline: none;
       -webkit-appearance: none;
       cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .speed-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 16px;
-      height: 16px;
-      background: white;
+      width: 18px;
+      height: 18px;
+      background: #fff;
       border-radius: 50%;
       cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      border: 2px solid #fff;
     }
     
     .speed-slider::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
-      background: white;
+      width: 18px;
+      height: 18px;
+      background: #fff;
       border-radius: 50%;
       cursor: pointer;
-      border: none;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .speed-slider::-moz-range-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .speed-label {
@@ -95,7 +107,14 @@
 </head>
 <body>
   <div class="scroll-indicator" id="scrollIndicator">Auto-scrolling...</div>
-  <div class="controls">Press SPACEBAR to pause/resume scrolling</div>
+  <div class="controls">
+    <div>Press SPACEBAR to pause/resume scrolling</div>
+    <div class="speed-control">
+      <span class="speed-label">Slow</span>
+      <input type="range" class="speed-slider" id="speedSlider" min="0.1" max="3" step="0.1" value="1">
+      <span class="speed-label">Fast</span>
+    </div>
+  </div>
 
   <img src="majlisunnoorimages/majlisunnoor_2.jpg" alt="" width="100%">
   <img src="majlisunnoorimages/majlisunnoor_3.jpg" alt="" width="100%">
@@ -117,14 +136,22 @@
   <img src="majlisunnoorimages/majlisunnoor_19.jpg" alt="" width="100%">
   <img src="majlisunnoorimages/majlisunnoor_20.jpg" alt="" width="100%">
   <img src="majlisunnoorimages/majlisunnoor_21.jpg" alt="" width="100%">
-  <img src="majlisunnoorimages/majlisunnoor_22git.jpg" alt="" width="100%">
+  <img src="majlisunnoorimages/majlisunnoor_22.jpg" alt="" width="100%">
 
   <script>
     let isScrolling = true;
-    let scrollSpeed = 1; // pixels per frame
+    let baseScrollSpeed = 1; // Base pixels per frame
+    let scrollSpeed = 1; // Current scroll speed
     let animationId;
     
     const indicator = document.getElementById('scrollIndicator');
+    const speedSlider = document.getElementById('speedSlider');
+    
+    // Update scroll speed when slider changes
+    speedSlider.addEventListener('input', function() {
+      const speedMultiplier = parseFloat(this.value);
+      scrollSpeed = baseScrollSpeed * speedMultiplier;
+    });
     
     function autoScroll() {
       if (isScrolling) {
@@ -183,7 +210,11 @@
     // Adjust scroll speed based on screen size
     function adjustScrollSpeed() {
       const screenHeight = window.innerHeight;
-      scrollSpeed = Math.max(0.5, screenHeight / 1000); // Responsive scroll speed
+      baseScrollSpeed = Math.max(0.5, screenHeight / 1000); // Responsive base scroll speed
+      
+      // Update current scroll speed with slider value
+      const speedMultiplier = parseFloat(speedSlider.value);
+      scrollSpeed = baseScrollSpeed * speedMultiplier;
     }
     
     window.addEventListener('resize', adjustScrollSpeed);
